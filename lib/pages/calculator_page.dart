@@ -2,9 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:calculator/constants.dart';
 import 'package:calculator/components/number_widget.dart';
 
-class CalculatorPage extends StatelessWidget {
+class CalculatorPage extends StatefulWidget {
   @override
-  int result = 0;
+  State<CalculatorPage> createState() => _CalculatorPageState();
+}
+
+class _CalculatorPageState extends State<CalculatorPage> {
+  String result = '';
+
+  @override
+  void changeResult(String newResult) {
+    result += newResult;
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackGroundColor,
@@ -32,7 +42,148 @@ class CalculatorPage extends StatelessWidget {
               child: Row(
                 children: [
                   Column(
-                    children: [NumberWidget()],
+                    children: [
+                      NumberWidget(
+                        number: '7',
+                        onpress: () {
+                          setState(() {
+                            changeResult('7');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '4',
+                        onpress: () {
+                          setState(() {
+                            changeResult('4');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '1',
+                        onpress: () {
+                          setState(() {
+                            changeResult('1');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '7',
+                        onpress: () {
+                          setState(() {
+                            changeResult('7');
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      NumberWidget(
+                        number: '8',
+                        onpress: () {
+                          setState(() {
+                            changeResult('8');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '5',
+                        onpress: () {
+                          setState(() {
+                            changeResult('5');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '2',
+                        onpress: () {
+                          setState(() {
+                            changeResult('2');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '0',
+                        onpress: () {
+                          setState(() {
+                            changeResult('0');
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      NumberWidget(
+                        number: '9',
+                        onpress: () {
+                          setState(() {
+                            changeResult('9');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '6',
+                        onpress: () {
+                          setState(() {
+                            changeResult('6');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '3',
+                        onpress: () {
+                          setState(() {
+                            changeResult('3');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '.',
+                        onpress: () {
+                          setState(() {
+                            changeResult('.');
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      NumberWidget(
+                        number: 'x',
+                        onpress: () {
+                          setState(() {
+                            changeResult('-');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '+',
+                        onpress: () {
+                          setState(() {
+                            changeResult('6');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '=',
+                        onpress: () {
+                          setState(() {
+                            changeResult('3');
+                          });
+                        },
+                      ),
+                      NumberWidget(
+                        number: '%',
+                        onpress: () {
+                          setState(() {
+                            changeResult('.');
+                          });
+                        },
+                      ),
+                    ],
                   )
                 ],
               ),
