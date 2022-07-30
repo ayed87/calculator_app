@@ -92,12 +92,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   Column(
                     children: [
                       FunctionWidget(
-                        icon: Ionicons.backspace_outline,
+                        text: 'AC',
                         onpress: () {
                           setState(() {
-                            if (result != null && result.length > 0) {
-                              result = result.substring(0, result.length - 1);
-                            }
+                            result = '';
                           });
                         },
                       ),
@@ -184,7 +182,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   Column(
                     children: [
                       FunctionWidget(
-                        icon: Ionicons.backspace_outline,
+                        icon: Ionicons.cellular,
                         onpress: () {
                           setState(() {
                             if (result != null && result.length > 0) {
