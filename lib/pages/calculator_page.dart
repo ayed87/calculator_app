@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:calculator/constants.dart';
 import 'package:calculator/components/number_widget.dart';
+import 'package:calculator/components/function_widget.dart';
+import 'package:ionicons/ionicons.dart';
 
 class CalculatorPage extends StatefulWidget {
   @override
@@ -43,6 +45,16 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 children: [
                   Column(
                     children: [
+                      FunctionWidget(
+                        icon: Ionicons.backspace_outline,
+                        onpress: () {
+                          setState(() {
+                            if (result != null && result.length > 0) {
+                              result = result.substring(0, result.length - 1);
+                            }
+                          });
+                        },
+                      ),
                       NumberWidget(
                         number: '7',
                         onpress: () {
@@ -68,10 +80,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         },
                       ),
                       NumberWidget(
-                        number: '7',
+                        number: '0',
                         onpress: () {
                           setState(() {
-                            changeResult('7');
+                            changeResult('0');
                           });
                         },
                       ),

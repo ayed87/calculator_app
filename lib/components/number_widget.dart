@@ -44,3 +44,26 @@ class NumberWidget extends StatelessWidget {
     );
   }
 }
+
+class RoundIconBotton extends StatelessWidget {
+  final IconData? icon;
+  final VoidCallback? onpress;
+  const RoundIconBotton({this.icon, this.onpress});
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      onPressed: onpress,
+      child: Icon(
+        icon,
+        color: Colors.white,
+      ),
+      elevation: 6,
+      fillColor: Colors.red,
+      constraints: BoxConstraints.tightFor(
+        width: 60,
+        height: 60,
+      ),
+    );
+  }
+}
