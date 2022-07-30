@@ -19,6 +19,7 @@ class FunctionWidget extends StatelessWidget {
           color: Colors.grey,
           borderRadius: BorderRadius.circular(10),
         ),
+        //have to make sure that on of the two properties (text and icon..) is null. otherwise it will give you an error.
         child: Center(
           child: icon != null
               ? Icon(
