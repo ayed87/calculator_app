@@ -91,6 +91,16 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   ),
                   Column(
                     children: [
+                      FunctionWidget(
+                        icon: Ionicons.backspace_outline,
+                        onpress: () {
+                          setState(() {
+                            if (result != null && result.length > 0) {
+                              result = result.substring(0, result.length - 1);
+                            }
+                          });
+                        },
+                      ),
                       NumberWidget(
                         number: '8',
                         onpress: () {
@@ -127,6 +137,16 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   ),
                   Column(
                     children: [
+                      FunctionWidget(
+                        icon: Ionicons.backspace_outline,
+                        onpress: () {
+                          setState(() {
+                            if (result != null && result.length > 0) {
+                              result = result.substring(0, result.length - 1);
+                            }
+                          });
+                        },
+                      ),
                       NumberWidget(
                         number: '9',
                         onpress: () {
@@ -163,8 +183,18 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   ),
                   Column(
                     children: [
+                      FunctionWidget(
+                        icon: Ionicons.backspace_outline,
+                        onpress: () {
+                          setState(() {
+                            if (result != null && result.length > 0) {
+                              result = result.substring(0, result.length - 1);
+                            }
+                          });
+                        },
+                      ),
                       NumberWidget(
-                        number: 'x',
+                        number: '×',
                         onpress: () {
                           setState(() {
                             changeResult('-');
