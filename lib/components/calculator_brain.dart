@@ -12,17 +12,3 @@ class CalculatorBrain {
   }
 }
 
-
-
-// my old code...........
-
-
-  // void addNumber(int number) {
-  //   if (currentResult == null) {
-  //     currentResult = (currentResult! + number);
-  //   }
-  // }
-
-  // void setNumber(String textNumber) {
-  //   currentResult = int.parse(textNumber);
-  // }
