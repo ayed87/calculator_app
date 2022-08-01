@@ -4,6 +4,7 @@ import 'package:calculator/components/number_widget.dart';
 import 'package:calculator/components/function_widget.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:calculator/components/operator_button.dart';
+import 'package:calculator/components/calculator_brain.dart';
 
 class CalculatorPage extends StatefulWidget {
   @override
@@ -204,7 +205,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         sign: '+',
                         onpress: () {
                           setState(() {
-                            changeResult('6');
+                            changeResult('+');
                           });
                         },
                       ),
@@ -212,7 +213,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         sign: '-',
                         onpress: () {
                           setState(() {
-                            changeResult('3');
+                            changeResult('-');
                           });
                         },
                       ),
@@ -220,7 +221,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         sign: '=',
                         onpress: () {
                           setState(() {
-                            changeResult('.');
+                            CalculatorBrain theFinalResult = CalculatorBrain();
+                            result =
+                                theFinalResult.GetResult(result).toString();
                           });
                         },
                       ),
