@@ -194,10 +194,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         },
                       ),
                       OperatorButton(
-                        sign: '×',
+                        sign: '*',
                         onpress: () {
                           setState(() {
-                            changeResult('-');
+                            changeResult('*');
                           });
                         },
                       ),
@@ -222,8 +222,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         onpress: () {
                           setState(() {
                             CalculatorBrain theFinalResult = CalculatorBrain();
-                            result =
-                                theFinalResult.GetResult(result).toString();
+                            result = theFinalResult.getResult(result);
                           });
                         },
                       ),
