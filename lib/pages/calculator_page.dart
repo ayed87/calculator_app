@@ -44,6 +44,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
             Container(
               margin: const EdgeInsets.all(10),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
                     children: [
@@ -82,10 +83,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         },
                       ),
                       NumberWidget(
-                        number: '0',
+                        number: '%',
                         onpress: () {
                           setState(() {
-                            changeResult('0');
+                            changeResult('%');
                           });
                         },
                       ),
@@ -137,13 +138,11 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   ),
                   Column(
                     children: [
-                      FunctionWidget(
-                        icon: Ionicons.backspace_outline,
+                      OperatorButton(
+                        sign: '',
                         onpress: () {
                           setState(() {
-                            if (result != null && result.length > 0) {
-                              result = result.substring(0, result.length - 1);
-                            }
+                            changeResult('');
                           });
                         },
                       ),
@@ -183,13 +182,11 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   ),
                   Column(
                     children: [
-                      FunctionWidget(
-                        icon: Ionicons.cellular,
+                      OperatorButton(
+                        sign: '/',
                         onpress: () {
                           setState(() {
-                            if (result != null && result.length > 0) {
-                              result = result.substring(0, result.length - 1);
-                            }
+                            changeResult('/');
                           });
                         },
                       ),
